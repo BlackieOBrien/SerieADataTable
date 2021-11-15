@@ -3,39 +3,13 @@
 #Date Started: 25/10/2021
 #Description:  Data Table Competition
 
-
-
-options(warn = -1) 
-if(!require(pacman))install.packages("pacman")
-pacman::p_load(
-  'data.table'
-  , 'doParallel'
-  , 'foreach'
-  , 'DBI'
-  , 'keyring'
-  , 'tocTools'
-  , 'fasttime'
-  , 'purrr'
-  , 'sendmailR'
-  , 'openxlsx'
-  , 'futile.logger'
-  , 'stringr'
-  , 'knitr'
-  , 'rmarkdown'
-  , 'lubridate'
-  , 'tidyverse'
-  , 'kableExtra'
-  , 'formattable'
-  , 'htmltools'
-)
-
-
 Report_Name <- 'Taylor Swift' 
-EDAM <- "EDAM_COLD"
-
-project_dirs <- report_tree(exclude = c("documentation"))
 
 library(readxl)
+library(data.table)
+library(dplyr)
+library(kableExtra)
+library(formattable)
 
 SerieA_Table <- read_excel("data/raw/SerieA.xlsx", 
                      sheet = "Table")
